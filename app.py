@@ -8,14 +8,14 @@ title = "TODO with Flask"
 heading = "ToDo Reminder"
 
 ##Un-Comment when running against the Cosmos DB Emulator
-client = MongoClient("mongodb://127.0.0.1:10250/?ssl=true") #host uri
-db = client.test    #Select the database
-db.authenticate(name="localhost",password='C2y6yDjf5' + r'/R' + '+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw' + r'/Jw==')
+#client = MongoClient("mongodb://127.0.0.1:10250/?ssl=true") #host uri
+#db = client.test    #Select the database
+#db.authenticate(name="localhost",password='C2y6yDjf5' + r'/R' + '+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw' + r'/Jw==')
 
 ## Comment out when running locally
-# client = MongoClient(os.getenv("MONGOURL"))
-# db = client.test    #Select the database
-# db.authenticate(name=os.getenv("MONGO_USERNAME"),password=os.getenv("MONGO_PASSWORD"))
+client = MongoClient(os.getenv("mongodb://arqui1db-2018:jY4INnddURHmEEJDL05qGHEYGZVQgGvf4EmomytTCqhf3wsxhuxbUPN9CJAzkJWyKvt9MLrfx1TOdxOwhNT1Xw==@arqui1db-2018.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"))
+db = client.test    #Select the database
+db.authenticate(name=os.getenv("arqui1_2018@outlook.es"),password=os.getenv("grupo2_arqui1"))
 todos = db.todo #Select the collection
 
 def redirect_url():
